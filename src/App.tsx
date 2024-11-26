@@ -4,10 +4,16 @@ import mqtt from "mqtt";
 
 
 
-const client  = mqtt.connect('mqtt://test.mosquitto.org:8081', {
-	protocol: 'mqtts',
-	clientId: 'a191124' 	// clientId solo te identifica como un cliente, escoje cualquiercadena que quieras 
+// const client  = mqtt.connect('mqtt://test.mosquitto.org:8081', {
+// 	protocol: 'mqtts',
+// 	clientId: 'a191124' 	// clientId solo te identifica como un cliente, escoje cualquiercadena que quieras 
+// });
+
+const client  = mqtt.connect('ws://localhost:8080',{
+  // protocol: 'mqtts',  // MQTT protocol
+  clientId: 'a191124'
 });
+
 
 
 client.subscribe('mensajesTec'); // mensajesTec.com is the MQTT topic
